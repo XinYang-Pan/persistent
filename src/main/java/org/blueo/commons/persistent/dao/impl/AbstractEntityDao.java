@@ -2,7 +2,6 @@ package org.blueo.commons.persistent.dao.impl;
 
 import java.util.List;
 
-import org.blueo.commons.BlueoUtils;
 import org.blueo.commons.persistent.dao.EntityDao;
 import org.blueo.commons.persistent.dao.po.id.IdHandler;
 import org.blueo.commons.persistent.entity.EntityUtils;
@@ -10,13 +9,15 @@ import org.blueo.commons.persistent.entity.EntityUtils;
 import com.google.common.collect.Lists;
 import com.google.common.reflect.TypeToken;
 
+import io.github.xinyangpan.commons.CommonUtils;
+
 public abstract class AbstractEntityDao<T, K> implements EntityDao<T, K> {
 	protected Class<T> parameterizedClass;
 	protected IdHandler<T, K> idHandler;
 
 	@SuppressWarnings("serial")
 	public AbstractEntityDao() {
-		parameterizedClass = BlueoUtils.getParameterizedClass(new TypeToken<T>(this.getClass()) {});
+		parameterizedClass = CommonUtils.getParameterizedClass(new TypeToken<T>(this.getClass()) {});
 		idHandler = EntityUtils.idGetter(parameterizedClass);
 	}
 	

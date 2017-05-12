@@ -2,11 +2,13 @@ package org.blueo.commons.persistent.dao.impl;
 
 import java.util.List;
 
-import org.blueo.commons.BlueoUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.blueo.commons.persistent.dao.Crud;
 import org.blueo.commons.persistent.dao.CrudBatch;
 import org.blueo.commons.persistent.dao.Search;
 import org.springframework.beans.BeanUtils;
+
+import com.google.common.collect.Iterables;
 
 public class AssemblableDao<T, K> extends AbstractEntityDao<T, K> {
 	private Crud<T, K> crud;
@@ -84,12 +86,11 @@ public class AssemblableDao<T, K> extends AbstractEntityDao<T, K> {
 	}
 
 	public final T findByExample(T t, boolean nullableResult) {
-		List<T> findByExample = this.findByExample(t);
-		if (nullableResult) {
-			return BlueoUtils.oneOrNull(findByExample);
-		} else {
-			return BlueoUtils.oneNoNull(findByExample);
+		List<T> list = this.findByExample(t);
+		if (nullableResult && CollectionUtils.isEmpty(list)) {
+			return null;
 		}
+		return Iterables.getOnlyElement(list);
 	}
 
 	public final List<T> findAll() {

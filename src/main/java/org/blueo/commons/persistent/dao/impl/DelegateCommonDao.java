@@ -17,6 +17,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
 
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
 
 public class DelegateCommonDao implements CommonDao {
@@ -118,7 +119,7 @@ public class DelegateCommonDao implements CommonDao {
 
 	@SuppressWarnings("unchecked")
 	protected <T> EntityDao<T, ?> getEntityDao(List<T> list) {
-		Assert.notEmpty(list);
+		Preconditions.checkNotNull(list);
 		Class<T> entityClass = (Class<T>) list.get(0).getClass();
 		return getEntityDao(entityClass);
 	}
