@@ -1,4 +1,4 @@
-package io.github.xinyangpan.persistent.hibernate5.impl;
+package io.github.xinyangpan.persistent.hibernate5;
 
 import java.io.Serializable;
 

@@ -13,7 +13,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
 import io.github.xinyangpan.persistent.entity.EntityColumn;
-import io.github.xinyangpan.persistent.jdbc.util.ColumnRowMapper;
+import io.github.xinyangpan.persistent.jdbc.ColumnRowMapper;
 
 public class JdbcSelect<T, K> extends JdbcOperation<T, K> {
 	//

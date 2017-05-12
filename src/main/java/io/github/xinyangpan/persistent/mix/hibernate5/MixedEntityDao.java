@@ -8,8 +8,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import io.github.xinyangpan.persistent.dao.impl.AssemblableDao;
-import io.github.xinyangpan.persistent.hibernate5.impl.HibernateCrud;
-import io.github.xinyangpan.persistent.hibernate5.impl.HibernateSearch;
+import io.github.xinyangpan.persistent.hibernate5.HibernateCrud;
+import io.github.xinyangpan.persistent.hibernate5.HibernateSearch;
 import io.github.xinyangpan.persistent.jdbc.impl.JdbcDao;
 
 public class MixedEntityDao<T, K extends Serializable> extends AssemblableDao<T, K> {

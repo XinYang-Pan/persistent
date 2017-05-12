@@ -8,8 +8,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.jdbc.core.ParameterizedPreparedStatementSetter;
 
 import io.github.xinyangpan.persistent.entity.EntityTable;
-import io.github.xinyangpan.persistent.jdbc.BlueoJdbcs;
-import io.github.xinyangpan.persistent.jdbc.util.ColumnPpss;
+import io.github.xinyangpan.persistent.jdbc.ColumnPpss;
+import io.github.xinyangpan.persistent.util.PersistentUtils;
 
 public class JdbcUpdate<T, K> extends JdbcOperation<T, K> {
 	//
@@ -19,7 +19,7 @@ public class JdbcUpdate<T, K> extends JdbcOperation<T, K> {
 	@PostConstruct
 	public void init() {
 		// update
-		updateSql = BlueoJdbcs.buildUpdateSql(entityTable.getTableName(), EntityTable.getColumnNames(entityTable.getNoneIdCols()), entityTable.getIdCol().getColumnName());
+		updateSql = PersistentUtils.buildUpdateSql(entityTable.getTableName(), EntityTable.getColumnNames(entityTable.getNoneIdCols()), entityTable.getIdCol().getColumnName());
 		updatePss = new ColumnPpss<T>(entityTable.getAllCols());
 	}
 

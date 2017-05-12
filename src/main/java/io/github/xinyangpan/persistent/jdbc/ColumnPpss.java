@@ -1,4 +1,4 @@
-package io.github.xinyangpan.persistent.jdbc.util;
+package io.github.xinyangpan.persistent.jdbc;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;

@@ -1,4 +1,4 @@
-package io.github.xinyangpan.persistent.jdbc;
+package io.github.xinyangpan.persistent.util;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.collect.Lists;
 
-public class BlueoJdbcs {
+public class PersistentUtils {
 	private static final String SEPARATOR = ", ";
 
 	public static String buildInsertSql(String tableName, List<String> columnNames) {
