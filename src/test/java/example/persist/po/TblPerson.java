@@ -1,4 +1,4 @@
-package example.po;
+package example.persist.po;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import example.enums.PersonSex;
+import example.persist.enums.PersonSex;
 import io.github.xinyangpan.persistent.dao.po.activeable.ActiveablePo;
 import io.github.xinyangpan.persistent.dao.po.id.HasId;
 import io.github.xinyangpan.persistent.dao.po.traceable.TraceablePo;

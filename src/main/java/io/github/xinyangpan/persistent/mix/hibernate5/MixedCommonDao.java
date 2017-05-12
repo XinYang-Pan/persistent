@@ -27,7 +27,7 @@ public class MixedCommonDao implements CommonDao {
 
 	@Override
 	public <T> T getById(Class<T> entityClass, Serializable id) {
-		return getHibernateTemplate().get(entityClass, id);
+		return hibernateTemplate.get(entityClass, id);
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class MixedCommonDao implements CommonDao {
 		if (t == null) {
 			return null;
 		}
-		return getHibernateTemplate().save(t);
+		return hibernateTemplate.save(t);
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class MixedCommonDao implements CommonDao {
 		if (t == null) {
 			return;
 		}
-		getHibernateTemplate().update(t);
+		hibernateTemplate.update(t);
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class MixedCommonDao implements CommonDao {
 		if (t == null) {
 			return;
 		}
-		getHibernateTemplate().update(t);
+		hibernateTemplate.update(t);
 	}
 
 	@Override
@@ -114,7 +114,7 @@ public class MixedCommonDao implements CommonDao {
 
 	@Override
 	public <T> List<T> findByExample(T t) {
-		return getHibernateTemplate().findByExample(t);
+		return hibernateTemplate.findByExample(t);
 	}
 
 	// -----------------------------
